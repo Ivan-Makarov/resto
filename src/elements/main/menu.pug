@@ -1,0 +1,19 @@
+section.menu#menu
+	.banner-heading-container
+		h2.section-heading.menu-heading.banner-heading The menu
+	.content
+		ul.menu-list.container-flex
+			each item in menu.dishes
+				li.menu-list--item
+					article.menu-item
+						section.menu-item--description
+							h3.menu-item--name #{item.name}
+							p.menu-item--ingredients
+								| #{item.ingredients[0][0].toUpperCase() + item.ingredients[0].substring(1)}, 
+								- for (let i = 1; i < item.ingredients.length - 1; i++) 
+									| #{item.ingredients[i]}, 
+								| #{item.ingredients[item.ingredients.length - 1]}
+						section.menu-item--price
+							span.menu-item--price-value $#{item.price}
+	button.load-more.btn.menu-btn Load more
+

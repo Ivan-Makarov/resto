@@ -1,0 +1,22 @@
+footer.footer
+	.content
+		.footer--container.container-flex
+			each restaurant in restaurants
+				.footer--column
+					article.footer--address
+						h3.restaurant #{restaurant.name}
+						each item in restaurant.address
+							p.address #{item}
+						a(href=`tel:${restaurant.tel.number}`) #{restaurant.tel.text}
+			.footer--column
+				ul.footer--link-list
+					each link in footerLinks
+						li
+							a(href=`${link.link}`) #{link.text}
+			.footer--column
+				a.nav--logo.logo(href="#header") Resto
+					span ..
+				p All rights reserved &copy;
+				p Find more at
+					a(href="http://pixelhint.com") Pixelhint.com
+                

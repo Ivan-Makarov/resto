@@ -1,0 +1,15 @@
+header.header#header
+	nav.nav
+		.content.container-flex.wide
+			a.logo(href="#header") Resto
+				span ..
+			ul.nav--list
+				each section in sections
+					li.nav--list-item
+						a(href=`#${section}`) #{section[0].toUpperCase() + section.substring(1)} 
+
+	section.intro.container-flex
+		.page-heading-container
+			h1.page-heading Resto
+			p.page-subheading Resto restaurant homepage website template
+       

@@ -1,0 +1,22 @@
+section.dishes
+	.content
+		.container-flex.heading-pagination
+			h2.section-heading.section-heading__regular Featured dishes
+			.dishes-slider-pages
+		ul.dishes-list.owl-carousel.owl-theme.dishes-slider
+			- const featuredDishes = menu.getFeatured();
+			each dish in featuredDishes
+				li.dishes-list--item
+					article.dishes-item
+						section.dishes-item--img
+							img(src=`${dish.img}` alt=`dish.name`)
+						section.dishes-item--description
+							h3.dishes-item--name
+								a(href="") #{dish.name}	
+							section.dishes-item--price
+								span.dishes-item--price-value $#{dish.price}
+						section.dishes-item--rating
+							- for (let i = 0; i < dish.rating; i++)
+								span.dishes-item--rating-star.dishes-item--rating-star__full
+							- for (let i = 0; i < 5 - dish.rating; i++)
+								span.dishes-item--rating-star.dishes-item--rating-star__empty
